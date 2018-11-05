@@ -30,10 +30,10 @@ class PythonToNao:
         self.tts = ALProxy("ALTextToSpeech", PythonToNao.IP, PythonToNao.PORT)
         self.camera = ALProxy("ALVideoDevice", PythonToNao.IP, PythonToNao.PORT)
         try:
-            self.handle = self.camera.subscribeCamera("MyModule", 2, vision_definitions.kVGA, vision_definitions.kRGBColorSpace, 30)
+            self.handle = self.camera.subscribeCamera("MyModule", 1, vision_definitions.kVGA, vision_definitions.kRGBColorSpace, 30)
         except RuntimeError:
             self.camera.unsubscribe("MyModule")
-            self.handle = self.camera.subscribeCamera("MyModule", 2, vision_definitions.kVGA, vision_definitions.kRGBColorSpace, 30)
+            self.handle = self.camera.subscribeCamera("MyModule", 1, vision_definitions.kVGA, vision_definitions.kRGBColorSpace, 30)
 
     def getMotionProxy(self):
         return self.motion
