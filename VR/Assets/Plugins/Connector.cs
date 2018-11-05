@@ -147,11 +147,11 @@ namespace SharpConnect {
 
 
                 // Encode texture into PNG
-                byte[] bytes = tex.EncodeToPNG();
+                //byte[] bytes = tex.EncodeToPNG();
                
 
                 // For testing purposes, also write to a file in the project folder
-                 File.WriteAllBytes(Application.dataPath + "/../SavedScreen.png", bytes);
+                 //File.WriteAllBytes(Application.dataPath + "/../SavedScreen.png", bytes);
 
 
 
