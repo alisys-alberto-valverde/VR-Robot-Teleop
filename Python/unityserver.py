@@ -6,7 +6,7 @@ import time
 
 # Python to NAO Robot socket
 class PythonToNao:
-    IP = "192.168.137.94"
+    IP = "192.168.1.38"
     PORT = 9559
     FRAME_TORSO = 0
     POSITION_ONLY = 7
