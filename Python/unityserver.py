@@ -6,7 +6,7 @@ import time
 
 # Python to NAO Robot socket
 class PythonToNao:
-    IP = "192.168.1.38"
+    IP = "192.168.1.41"
     PORT = 9559
     FRAME_TORSO = 0
     POSITION_ONLY = 7
@@ -30,10 +30,10 @@ class PythonToNao:
         self.tts = ALProxy("ALTextToSpeech", PythonToNao.IP, PythonToNao.PORT)
         self.camera = ALProxy("ALVideoDevice", PythonToNao.IP, PythonToNao.PORT)
         try:
-            self.handle = self.camera.subscribeCamera("MyModule", 1, vision_definitions.kVGA, vision_definitions.kRGBColorSpace, 30)
+            self.handle = self.camera.subscribeCamera("MyModule", 0, vision_definitions.kVGA, vision_definitions.kRGBColorSpace, 30)
         except RuntimeError:
             self.camera.unsubscribe("MyModule")
-            self.handle = self.camera.subscribeCamera("MyModule", 1, vision_definitions.kVGA, vision_definitions.kRGBColorSpace, 30)
+            self.handle = self.camera.subscribeCamera("MyModule", 0, vision_definitions.kVGA, vision_definitions.kRGBColorSpace, 30)
 
     def getMotionProxy(self):
         return self.motion

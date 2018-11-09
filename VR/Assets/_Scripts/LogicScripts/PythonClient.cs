@@ -8,6 +8,7 @@ public class PythonClient: MonoBehaviour {
     public Connector serverConnection = new Connector();
     public float SendFrequency = 1.0f;
 
+
     void Start() {
         Debug.Log(serverConnection.fnConnectResult("localhost", 10000));
     }

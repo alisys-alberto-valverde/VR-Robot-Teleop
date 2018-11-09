@@ -11,13 +11,16 @@ public class HeadRotationListener : MonoBehaviour {
 	void Start () {
 		clientObject = GameObject.Find("/LogicScripts").GetComponent<PythonClient>();
 		headObject = GameObject.Find("/OVRCameraRig/TrackingSpace/CenterEyeAnchor");
-	}
+        clientObject.SendFrequency = 0.2f;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		elapsedTime += Time.deltaTime;
-		if (clientObject.serverConnection.isConnected && elapsedTime >= clientObject.SendFrequency) {
-			float yaw = headObject.transform.eulerAngles.y;
+		//if (clientObject.serverConnection.isConnected && elapsedTime >= clientObject.SendFrequency) {
+          if (clientObject.serverConnection.isConnected && elapsedTime >= 0.1){
+            float yaw = headObject.transform.eulerAngles.y;
 			float pitch = headObject.transform.eulerAngles.x;
 			if (yaw > 180.0f) yaw -= 360.0f;
 			if (pitch > 180.0f) pitch -= 360.0f;
